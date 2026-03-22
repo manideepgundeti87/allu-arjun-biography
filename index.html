@@ -1,83 +1,130 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Register</title>
+    <style>
+        body {
+            background: #f7f0ac;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #f0acf7, #acf7f0, #f7f0ac);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #f0acf7, #acf7f0, #f7f0ac);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: sans-serif;      
+       }
+       .parent{
+           margin: 40px auto;
+           background-color: transparent;
+           width:400px;
+           height: 900px;
+           border-radius: 15px;
+           padding: 25px;
+           box-shadow: 0px 3px 30px gray;
+       }
+       h1{
+          text-align: center;
+       }
+       .form-field label{
+          text-align: left;
+       }
+       .form-field input{
+          display: flex;
+          margin: 15px;
+          width: 90%;
+          padding: 15px;
+          border-radius: 10px;
+       }
+       .radio{
+          display: flex;
+          margin: 10px;
+          gap: 6px;
+       }
+       .profile{
+          margin: 10px;
+       }
+       .select-city{
+          padding: 4px;
+          border-radius: 400px;
+          margin: 500px;
+          border: 300px solid red;
+       }
+       .form-button button{
+          margin 10px;
+          font-weight: bold;
+          align-content: center;
+          padding: 15px;
+          width: 90%;
+          border-radius: 10px;
+          border: none;
+          background-color: rgb(211, 26, 85);
+          cursor: pointer;
+       }
+    </style>
 </head>
 <body>
-    <center>
-        <h2>Registration Form</h2>
-        <form action="./login.html"> 
-            <p>
-            <input 
-                 type="text"
-                 placeholder="Enter your name"
-                 name="name" required/>
-            </p>
-            <p>
-             <input 
-             type="Email" 
-             placeholder="Email"
-             name="mail" required/>
-            </p>
-            <p>
-                <input 
-                type="password"
-                placeholder="Enter password"
-                name="pass" required/>
-            </p>           
-            <p>
-                <input
-                type="number"
-                placeholder="Enter number" required/>
-            </p>
-            <p>
-                <input 
-                   type="radio"
-                   name="gender"
-                   id="gmale"
-                   value="male" required/>
-                   <label for="gmale">male</label>
-            
-                   <input type="radio" 
-                   name="gender"
-                   id="gfemale"
-                   value="female" required/>
-                   <label for="gfemale">Female</label>
-            </p>  
-
-            <p>      
-                <input type="checkbox" id="gdiploma" value="10th" required/> 
-                <label for="gdiploma">10th</label>
-                <input type="checkbox" id="gdegree" value="diploma" required/> 
-                <label for="gdegree">diploma</label>
-                <input type="checkbox" id="giti" value="ITI" required/> 
-                <label for="giti">ITI</label>
-                <input type="checkbox" id="gdegree" value="degree" required/> 
-                <label for="gdegree">degree</label>
-            </p>
-            <p>
-                <textarea placeholder="Enter your addres" name="" id="" required ></textarea>
-
-            </p>
-            <p>
-                <select required> 
-                <option value="">select your city</option>
-                <option value="hyderabad">hyderabad</option>
-                <option value="vizag">vizag</option>
-                <option value="mumbai">mumbai</option>
+        
+        <form action="login.html" class="parent">
+            <h1>Register</h1>
+            <div class="form-field">
+                <label for="name"><b>Name:</b></label>
+                <input type="text" name="name" id="name"placeholder="Enter your name" required>
+            </div>
+            <div class="form-field">
+                <label for="email"><b>Email:</b></label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-field">
+                <label for="password"><b>Password:</b></label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-field">
+                <label for="number"><b>Phone Number:</b></label>
+                <input type="number" name="number" id="number" placeholder="Enter number" required>
+            </div>
+            <div class="form-radio">
+                <label for="gender"><b>General:</b></label>
+            <div class="radio">
+                <input type="radio" name="male" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="female" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div class="check">
+                <label for="study"><b>Education:</b></label>
+                <input type="checkbox" id="10th class" value="10th" class="check">
+                <label for="10th">10th</label>
+                <input type="checkbox" id="diploma" value="Diploma">
+                <label for="diploma">diploma</label>
+                <input type="checkbox" id="iti" value="ITI">
+                <label for="iti">ITI</label>
+                <input type="checkbox" id="degree" value="Degree">
+                <label for="degree">Degree</label>
+            </div>
+            <div class="form-field">
+                <label for="address"><b>Address:</b></label>
+                <input type="textarea" name="address" id="address" required>
+            </div>
+            <div class="city">
+                <label for="city"><b>City:</b></label>
+                <select name="city" id="city">class="select-city">
+                  <option value="select">Select Your City</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Karimnagar">Karimnagar</option>
+                  <option value="Bangalore">Bangalore</option>
                 </select>
-        </p>
-        <p>
-            <label for="">Date of birth</label>
-            <input type="date" required />
-
-        </p>
-
-
-
-        <button>submit</button>
+            </div>
+            <div class="">
+                <label for="dob"><b>Date of birth:</b><label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <div class="form-button">
+            <button>Register</button>
+            </div>
         </form>
-        </center>
+
 </body>
 </html>
